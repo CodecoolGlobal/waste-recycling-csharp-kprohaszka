@@ -97,6 +97,16 @@ namespace Codecool.WasteRecycling
             _count++;
         }
 
+        public void Remove()
+        {
+            if(_count > 0)
+            {
+                _array[_count - 1] = 0;
+                _count--;
+            }
+        }
+
+
 
     }
 }
