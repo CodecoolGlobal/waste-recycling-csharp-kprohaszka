@@ -106,7 +106,18 @@ namespace Codecool.WasteRecycling
             }
         }
 
-
+        public void RemoveAt(int index)
+        {
+            if(_count > 0)
+            {
+                for (int i = index; i < _count; i++)
+                {
+                    _array[i] = _array[i + 1];
+                }
+                _array[_count - 1] = 0;
+                _count--;
+            }
+        }
 
     }
 }
