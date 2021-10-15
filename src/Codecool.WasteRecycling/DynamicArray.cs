@@ -28,5 +28,23 @@ namespace Codecool.WasteRecycling
             _array[_count] = data;
             _count++;
         }
+
+        public void grow()
+        {
+            int[] TemporaryArray = null;
+            if(_count == _size)
+            {
+                TemporaryArray = new int[_size * 2];
+                {
+                    _array.CopyTo(TemporaryArray, 0);
+                }
+
+                _array = TemporaryArray;
+
+                _size = _size * 2;
+            }
+
+
+        }
     }
 }
