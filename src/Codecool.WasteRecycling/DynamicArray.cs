@@ -6,19 +6,18 @@ namespace Codecool.WasteRecycling
 {
     public class DynamicArray
     {
-
-        private int[] _array;
-        private int _count;
-        private int _size;
-
         public DynamicArray()
         {
-            _array = new int[1];
+            _array = new Garbage[1];
             _count = 0;
             _size = 1;
         }
 
-        public void Add(int data)
+        public Garbage[] _array { get; private set; }
+        public int _count { get; private set; }
+        public int _size { get; private set; }
+
+        public void Add(Garbage data)
         {
             if (_count == _size)
             {
@@ -31,10 +30,10 @@ namespace Codecool.WasteRecycling
 
         public void Grow()
         {
-            int[] TemporaryArray = null;
+            Garbage[] TemporaryArray = null;
             if (_count == _size)
             {
-                TemporaryArray = new int[_size * 2];
+                TemporaryArray = new Garbage[_size * 2];
                 {
                     _array.CopyTo(TemporaryArray, 0);
                 }
@@ -47,10 +46,10 @@ namespace Codecool.WasteRecycling
 
         public void GrowWithoutBuiltInCopy()
         {
-            int[] TemporaryArray = null;
+            Garbage[] TemporaryArray = null;
             if (_count == _size)
             {
-                TemporaryArray = new int[_size * 2];
+                TemporaryArray = new Garbage[_size * 2];
                 {
                     for (int i = 0; i < _size; i++)
                     {
@@ -66,10 +65,10 @@ namespace Codecool.WasteRecycling
 
         public void Shrink()
         {
-            int[] TemporaryArray = null;
+            Garbage[] TemporaryArray = null;
             if(_count > 0)
             {
-                TemporaryArray = new int[_count];
+                TemporaryArray = new Garbage[_count];
                 for (int i = 0; i < _count; i++)
                 {
                     TemporaryArray[i] = _array[i];
@@ -81,7 +80,7 @@ namespace Codecool.WasteRecycling
             }
         }
 
-        public void AddAt(int index, int data)
+        public void AddAt(int index, Garbage data)
         {
             if(_count == _size)
             {
@@ -101,7 +100,7 @@ namespace Codecool.WasteRecycling
         {
             if(_count > 0)
             {
-                _array[_count - 1] = 0;
+                _array[_count - 1] = null;
                 _count--;
             }
         }
@@ -114,7 +113,7 @@ namespace Codecool.WasteRecycling
                 {
                     _array[i] = _array[i + 1];
                 }
-                _array[_count - 1] = 0;
+                _array[_count - 1] = null;
                 _count--;
             }
         }
