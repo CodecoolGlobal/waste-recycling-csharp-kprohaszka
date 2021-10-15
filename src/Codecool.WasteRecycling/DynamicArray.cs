@@ -20,7 +20,7 @@ namespace Codecool.WasteRecycling
 
         public void add(int data)
         {
-            if(_count == _size)
+            if (_count == _size)
             {
                 grow();
             }
@@ -32,7 +32,7 @@ namespace Codecool.WasteRecycling
         public void grow()
         {
             int[] TemporaryArray = null;
-            if(_count == _size)
+            if (_count == _size)
             {
                 TemporaryArray = new int[_size * 2];
                 {
@@ -43,8 +43,25 @@ namespace Codecool.WasteRecycling
 
                 _size = _size * 2;
             }
+        }
 
+        public void growWithoutBuiltInCopy()
+        {
+            int[] TemporaryArray = null;
+            if (_count == _size)
+            {
+                TemporaryArray = new int[_size * 2];
+                {
+                    for (int i = 0; i < _size; i++)
+                    {
+                        TemporaryArray[i] = _array[i];
+                    }
+                }
 
+                _array = TemporaryArray;
+
+                _size = _size * 2;
+            }
         }
     }
 }
