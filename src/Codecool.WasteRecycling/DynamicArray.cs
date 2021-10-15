@@ -11,11 +11,11 @@ namespace Codecool.WasteRecycling
         private int _count;
         private int _size;
 
-        public DynamicArray(int[] array, int count, int size)
+        public DynamicArray()
         {
-            _array = array;
-            _count = count;
-            _size = size;
+            _array = new int[1];
+            _count = 0;
+            _size = 1;
         }
 
         public void Add(int data)
