@@ -9,7 +9,12 @@ namespace Codecool.WasteRecycling
         {
             Color = color;
         }
-       public string Color { get; private set; }
-       public List<Garbage> GarbageBin { get; private set; }
+        public string Color { get; private set; }
+        public List<Garbage> GarbageBin { get; private set; }
+
+        public void ThrowOutGarbage(Garbage garbage)
+        {
+            GarbageBin.Add(garbage);
+        }
     }
 }
