@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Codecool.WasteRecycling
 {
-    class DynamicArray
+    public class DynamicArray
     {
 
         private int[] _array;
