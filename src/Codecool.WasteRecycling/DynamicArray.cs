@@ -110,7 +110,7 @@ namespace Codecool.WasteRecycling
         {
             if(_count > 0)
             {
-                for (int i = index; i < _count; i++)
+                for (int i = index; i < _count -1; i++)
                 {
                     _array[i] = _array[i + 1];
                 }
