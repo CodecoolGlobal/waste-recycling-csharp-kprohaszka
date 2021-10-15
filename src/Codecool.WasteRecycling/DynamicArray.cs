@@ -63,5 +63,24 @@ namespace Codecool.WasteRecycling
                 _size = _size * 2;
             }
         }
+
+        public void shrink()
+        {
+            int[] TemporaryArray = null;
+            if(_count > 0)
+            {
+                TemporaryArray = new int[_count];
+                for (int i = 0; i < _count; i++)
+                {
+                    TemporaryArray[i] = _array[i];
+                }
+
+                _size = _count;
+
+                _array = TemporaryArray;
+            }
+        }
+
+
     }
 }
