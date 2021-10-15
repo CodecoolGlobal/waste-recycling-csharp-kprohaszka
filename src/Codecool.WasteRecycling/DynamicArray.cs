@@ -18,18 +18,18 @@ namespace Codecool.WasteRecycling
             _size = size;
         }
 
-        public void add(int data)
+        public void Add(int data)
         {
             if (_count == _size)
             {
-                grow();
+                Grow();
             }
 
             _array[_count] = data;
             _count++;
         }
 
-        public void grow()
+        public void Grow()
         {
             int[] TemporaryArray = null;
             if (_count == _size)
@@ -45,7 +45,7 @@ namespace Codecool.WasteRecycling
             }
         }
 
-        public void growWithoutBuiltInCopy()
+        public void GrowWithoutBuiltInCopy()
         {
             int[] TemporaryArray = null;
             if (_count == _size)
@@ -64,7 +64,7 @@ namespace Codecool.WasteRecycling
             }
         }
 
-        public void shrink()
+        public void Shrink()
         {
             int[] TemporaryArray = null;
             if(_count > 0)
@@ -79,6 +79,22 @@ namespace Codecool.WasteRecycling
 
                 _array = TemporaryArray;
             }
+        }
+
+        public void AddAt(int index, int data)
+        {
+            if(_count == _size)
+            {
+                Grow();
+            }
+
+            for (int i = _count -1; i >= index; i--)
+            {
+                _array[i + 1] = _array[i];
+            }
+
+            _array[index] = data;
+            _count++;
         }
 
 
