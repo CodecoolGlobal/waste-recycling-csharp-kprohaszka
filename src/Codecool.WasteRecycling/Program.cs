@@ -16,6 +16,11 @@ namespace Codecool.WasteRecycling
             var plasticGarbage1 = new PlasticGarbage("Mineral Water Bottle");
             var plasticGarbage2 = new PlasticGarbage("McDonalds Fork");
             var plasticGarbage3 = new PlasticGarbage("Wrapper");
+            paperGarbage1.Squeeze();
+            paperGarbage2.Squeeze();
+            paperGarbage3.Squeeze();
+            plasticGarbage1.Clean();
+            plasticGarbage2.Clean();
             dustbin.ThrowOutGarbage(regularGarbage1);
             dustbin.ThrowOutGarbage(regularGarbage2);
             dustbin.ThrowOutGarbage(paperGarbage1);
