@@ -8,12 +8,10 @@ namespace Codecool.WasteRecycling
         public Dustbin(string color)
         {
             Color = color;
-            GarbageBin = new Garbage[0];
-            GarbageBin2 = new DynamicArray();
+            GarbageBin = new DynamicArray();
         }
         public string Color { get; private set; }
-        public Garbage[] GarbageBin { get; private set; }
-        public DynamicArray GarbageBin2 { get; private set; }
+        public DynamicArray GarbageBin { get; private set; }
         public int HouseWasteCount { get; private set; }
         public int PaperWasteCount { get; private set; }
         public int PlasticWasteCount { get; private set; }
@@ -35,11 +33,7 @@ namespace Codecool.WasteRecycling
                     throw new DustbinContentException();
                 }
             }
-            //var newGarbageBin = new Garbage[GarbageBin.Length + 1];
-            //GarbageBin.CopyTo(newGarbageBin, 0);
-            //newGarbageBin[newGarbageBin.Length - 1] = garbage;
-            //GarbageBin = newGarbageBin;
-            GarbageBin2.Add(garbage);
+            GarbageBin.Add(garbage);
         }
         }
     }
