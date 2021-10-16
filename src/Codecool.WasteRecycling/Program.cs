@@ -29,6 +29,9 @@ namespace Codecool.WasteRecycling
             dustbin.ThrowOutGarbage(plasticGarbage1);
             dustbin.ThrowOutGarbage(plasticGarbage2);
             dustbin.ThrowOutGarbage(plasticGarbage3);
+            dustbin.DisplayContents();
+            dustbin.EmptyContents();
+            dustbin.DisplayContents();
         }
     }
 }
