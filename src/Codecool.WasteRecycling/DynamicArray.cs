@@ -28,6 +28,13 @@ namespace Codecool.WasteRecycling
             _count++;
         }
 
+        public void Clear()
+        {
+            _array = new Garbage[1];
+            _count = 0;
+            _size = 1;
+        }
+
         public void Grow()
         {
             Garbage[] TemporaryArray = null;
