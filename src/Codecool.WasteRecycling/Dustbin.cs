@@ -15,9 +15,10 @@ namespace Codecool.WasteRecycling
         public int HouseWasteCount { get; private set; }
         public int PaperWasteCount { get; private set; }
         public int PlasticWasteCount { get; private set; }
+
         public void ThrowOutGarbage(Garbage garbage)
         {
-            if(garbage is PaperGarbage)
+            if (garbage is PaperGarbage)
             {
                 PaperGarbage paperGarbage = (PaperGarbage)garbage;
                 if (!paperGarbage.Squeezed)
@@ -35,8 +36,15 @@ namespace Codecool.WasteRecycling
             }
             GarbageBin.Add(garbage);
         }
+
+        public void EmptyContents()
+        {
+            GarbageBin.Clear();
         }
+
+
     }
+}
 
 
 
@@ -72,34 +80,34 @@ namespace Codecool.WasteRecycling
 
 
 
-    //if (garbage.GetType() == typeof(PlasticGarbage)
-    //        {
-    //    if (garbage.Cleaned = true)
-    //    {
-    //        var DynamicArray = new DynamicArray();
-    //        DynamicArray.Add(garbage);
-    //        GarbageBin = DynamicArray._array;
-    //        Garbage Garbagerw = new PlasticGarbage(false);
-    //        Garbagerw.
-    //            }
-    //}
-    //else if (garbage.GetType() == typeof(PaperGarbage))
-    //{
-    //    if (PaperGarbage = true)
-    //    {
-    //        var DynamicArray = new DynamicArray();
-    //        DynamicArray.Add(garbage);
-    //        GarbageBin = DynamicArray._array;
-    //    }
-    //}
-    //else if (garbage.GetType() != typeof(PaperGarbage) ||
-    //    garbage.GetType() != typeof(PaperGarbage))
-    //{
-    //    var DynamicArray = new DynamicArray();
-    //    DynamicArray.Add(garbage);
-    //    GarbageBin = DynamicArray._array;
-    //}
-    //else
-    //{
-    //    throw new DustbinContentException();
-    //}
+//if (garbage.GetType() == typeof(PlasticGarbage)
+//        {
+//    if (garbage.Cleaned = true)
+//    {
+//        var DynamicArray = new DynamicArray();
+//        DynamicArray.Add(garbage);
+//        GarbageBin = DynamicArray._array;
+//        Garbage Garbagerw = new PlasticGarbage(false);
+//        Garbagerw.
+//            }
+//}
+//else if (garbage.GetType() == typeof(PaperGarbage))
+//{
+//    if (PaperGarbage = true)
+//    {
+//        var DynamicArray = new DynamicArray();
+//        DynamicArray.Add(garbage);
+//        GarbageBin = DynamicArray._array;
+//    }
+//}
+//else if (garbage.GetType() != typeof(PaperGarbage) ||
+//    garbage.GetType() != typeof(PaperGarbage))
+//{
+//    var DynamicArray = new DynamicArray();
+//    DynamicArray.Add(garbage);
+//    GarbageBin = DynamicArray._array;
+//}
+//else
+//{
+//    throw new DustbinContentException();
+//}
