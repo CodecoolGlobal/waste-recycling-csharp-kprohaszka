@@ -42,6 +42,37 @@ namespace Codecool.WasteRecycling
             GarbageBin.Clear();
         }
 
+        public override string ToString()
+        {
+            string houseWasteContent = "";
+            string paperWasteContent = "";
+            string plasticWasteContent = "";
+            int houseWasteCount = 0;
+            int paperWasteCount = 0;
+            int plasticWasteCount = 0;
+            foreach (var garbage in GarbageBin._array)
+            {
+                if (garbage is Garbage)
+                {
+                    houseWasteCount++;
+                    houseWasteContent += $"{garbage.Name} nr.{houseWasteCount}";
+                }
+                else if (garbage is PaperGarbage)
+                {
+                    paperWasteCount++;
+                    paperWasteContent += $"{garbage.Name} nr.{paperWasteCount}";
+                }
+                else if (garbage is PlasticGarbage)
+                {
+                    plasticWasteCount++;
+                    plasticWasteContent += $"{garbage.Name} nr.{plasticWasteCount}";
+                }
+            }
+            return $"{Color} Dustbin! House waste content:{houseWasteCount} item(s) {houseWasteContent} " +
+                $"Paper content: {paperWasteCount} item(s) {paperWasteContent} " +
+                $"Plastic content: {paperWasteCount} item(s) {paperWasteContent}";
+        }
+
 
     }
 }
