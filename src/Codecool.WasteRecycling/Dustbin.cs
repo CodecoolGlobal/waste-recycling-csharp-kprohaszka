@@ -52,12 +52,12 @@ namespace Codecool.WasteRecycling
             int plasticWasteCount = 0;
             foreach (var garbage in GarbageBin._array)
             {
-                if (garbage is PaperGarbage)
+                if (garbage is PaperGarbage && garbage != null)
                 {
                     paperWasteCount++;
                     paperWasteContent += $"{garbage.Name} nr.{paperWasteCount} ";
                 }
-                else if (garbage is PlasticGarbage)
+                else if (garbage is PlasticGarbage && garbage != null)
                 {
                     plasticWasteCount++;
                     plasticWasteContent += $"{garbage.Name} nr.{plasticWasteCount} ";
