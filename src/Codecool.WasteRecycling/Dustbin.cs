@@ -14,6 +14,9 @@ namespace Codecool.WasteRecycling
         public string Color { get; private set; }
         public Garbage[] GarbageBin { get; private set; }
         public DynamicArray GarbageBin2 { get; private set; }
+        public int HouseWasteCount { get; private set; }
+        public int PaperWasteCount { get; private set; }
+        public int PlasticWasteCount { get; private set; }
         public void ThrowOutGarbage(Garbage garbage)
         {
             if(garbage is PaperGarbage)
