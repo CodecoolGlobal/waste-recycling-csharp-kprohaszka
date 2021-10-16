@@ -73,6 +73,11 @@ namespace Codecool.WasteRecycling
                 $"Plastic content: {paperWasteCount} item(s) {paperWasteContent}";
         }
 
+        public void DisplayContents()
+        {
+            System.Console.WriteLine(ToString());
+        }
+
 
     }
 }
