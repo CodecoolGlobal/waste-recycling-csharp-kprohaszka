@@ -52,25 +52,25 @@ namespace Codecool.WasteRecycling
             int plasticWasteCount = 0;
             foreach (var garbage in GarbageBin._array)
             {
-                if (garbage is Garbage)
-                {
-                    houseWasteCount++;
-                    houseWasteContent += $"{garbage.Name} nr.{houseWasteCount}";
-                }
-                else if (garbage is PaperGarbage)
+                if (garbage is PaperGarbage)
                 {
                     paperWasteCount++;
-                    paperWasteContent += $"{garbage.Name} nr.{paperWasteCount}";
+                    paperWasteContent += $"{garbage.Name} nr.{paperWasteCount} ";
                 }
                 else if (garbage is PlasticGarbage)
                 {
                     plasticWasteCount++;
-                    plasticWasteContent += $"{garbage.Name} nr.{plasticWasteCount}";
+                    plasticWasteContent += $"{garbage.Name} nr.{plasticWasteCount} ";
+                }
+                else if (garbage != null)
+                {
+                    houseWasteCount++;
+                    houseWasteContent += $"{garbage.Name} nr.{houseWasteCount} ";
                 }
             }
-            return $"{Color} Dustbin! House waste content:{houseWasteCount} item(s) {houseWasteContent} " +
-                $"Paper content: {paperWasteCount} item(s) {paperWasteContent} " +
-                $"Plastic content: {paperWasteCount} item(s) {paperWasteContent}";
+            return $"{Color} Dustbin!\nHouse waste content:{houseWasteCount} item(s) {houseWasteContent} \n" +
+                $"Paper content: {paperWasteCount} item(s) {paperWasteContent} \n" +
+                $"Plastic content: {plasticWasteCount} item(s) {plasticWasteContent}";
         }
 
         public void DisplayContents()
